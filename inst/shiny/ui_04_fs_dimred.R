@@ -1,3 +1,4 @@
+source("module_renameCluster.R")
 shinyPanelFS_DimRed <- fluidPage(
   tags$script("Shiny.addCustomMessageHandler('close_dropDownDimRedEmbedding', function(x){
                   $('html').click();
@@ -104,6 +105,7 @@ shinyPanelFS_DimRed <- fluidPage(
               circle = FALSE,
               inline = TRUE
             )),
+            renameClusterUI(id = "renameCluster_featureDim"),
             column(7, fluidRow(h6("Scatterplot showing the variability of each feature versus its average expression across all cells"), align="center"))
           ),
           hr(),
